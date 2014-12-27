@@ -28,7 +28,7 @@
 }
 
 - (void) setSuit:(NSString *)suit {
-    if( [PlayingCard validSuits] containsObject: suit]) {
+    if( [[PlayingCard validSuits] containsObject: suit]) {
         _suit = suit;
     }
 }

@@ -7,16 +7,26 @@
 //
 
 #import "ViewController.h"
+#import "Deck.h"
+#import "PlayingCardDeck.h"
+#import "PlayingCard.h"
 
 @interface ViewController ()
 
 @property (weak, nonatomic) IBOutlet UILabel *flipsLabel;
 /*Keep track of the number of flips of the card*/
 @property (nonatomic) int flipCount;
+@property (nonatomic) Deck *deckOfCards;
 
 @end
 
 @implementation ViewController
+//Getter and Setters
+
+-(Deck *) deckOfCards {
+    if(!_deckOfCards) _deckOfCards = [[PlayingCardDeck alloc] init];
+    return _deckOfCards;
+}
 
 -(void)setFlipCount:(int)flipCount {
     _flipCount = flipCount;
@@ -28,23 +38,17 @@
 - (IBAction)touchCardButton:(UIButton *)sender {
     
     if(sender.currentTitle.length) {
-        /*UIImage has a class method called imageNamed: which crates an instance of UIImage
-         given the name of an image in the imgae assets library.*/
         UIImage *cardImage = [UIImage imageNamed:@"cardback"];
-        /*The @"" creates an NSString object*/
-        
-        
         [sender setBackgroundImage:cardImage forState:UIControlStateNormal];
-        /*The setBackgroundImage:forState: method asks for the state. We are going to set the background for the defualt (normal state).*/
-        
         [sender setTitle:@"" forState:UIControlStateNormal];
         /*Getting rid of the A of clubs on the card*/
     } else {
         UIImage *cardImage = [UIImage imageNamed:@"cardfront"];
+        PlayingCard *playingCard = (PlayingCard *)[self.deckOfCards drawRandomCard];
         
         [sender setBackgroundImage:cardImage forState:UIControlStateNormal];
-        
-        [sender setTitle:@"A♣︎" forState:UIControlStateNormal];
+        NSLog(@"Contents are: %@", playingCard.contents);
+        [sender setTitle: playingCard.contents forState:UIControlStateNormal];
     }
     self.flipCount++;
     
