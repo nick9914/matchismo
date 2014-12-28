@@ -9,6 +9,25 @@
 #import "PlayingCard.h"
 
 @implementation PlayingCard
+
+-(int)match:(NSArray *)otherCards {
+    int score = 0;
+    if([otherCards count] == 1) { //TODO: only matching one card here.
+        PlayingCard *otherCard = [otherCards firstObject];
+        if(otherCard.rank == self.rank) {
+            score = 4;
+        } else if ([otherCard.suit isEqualToString:self.suit]) {
+            score = 1;
+        }
+
+        
+    }
+    
+    
+    
+    return score;
+}
+
 //Getters and Setters
 
 /*In this case we are modifying our parents class' getter of contents*/

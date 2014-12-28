@@ -18,6 +18,7 @@
 		464DCB8C1A4A917B0079F7A9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 464DCB8B1A4A917B0079F7A9 /* Images.xcassets */; };
 		464DCB8F1A4A917B0079F7A9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 464DCB8D1A4A917B0079F7A9 /* LaunchScreen.xib */; };
 		464DCB9B1A4A917B0079F7A9 /* MatchismoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 464DCB9A1A4A917B0079F7A9 /* MatchismoTests.m */; };
+		46A58DCD1A4F2C98001D8B11 /* CardMatchingGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 46A58DCC1A4F2C98001D8B11 /* CardMatchingGame.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,8 @@
 		464DCB941A4A917B0079F7A9 /* MatchismoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MatchismoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		464DCB991A4A917B0079F7A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		464DCB9A1A4A917B0079F7A9 /* MatchismoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MatchismoTests.m; sourceTree = "<group>"; };
+		46A58DCB1A4F2C98001D8B11 /* CardMatchingGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CardMatchingGame.h; path = Model/CardMatchingGame.h; sourceTree = "<group>"; };
+		46A58DCC1A4F2C98001D8B11 /* CardMatchingGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CardMatchingGame.m; path = Model/CardMatchingGame.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +78,8 @@
 		460C27771A4B678300F71590 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				46A58DCB1A4F2C98001D8B11 /* CardMatchingGame.h */,
+				46A58DCC1A4F2C98001D8B11 /* CardMatchingGame.m */,
 				460C27741A4B670700F71590 /* Card.h */,
 				460C27751A4B670700F71590 /* Card.m */,
 				460C27781A4B795F00F71590 /* Deck.h */,
@@ -251,6 +256,7 @@
 				460C277A1A4B795F00F71590 /* Deck.m in Sources */,
 				464DCB871A4A917B0079F7A9 /* ViewController.m in Sources */,
 				464DCB841A4A917B0079F7A9 /* AppDelegate.m in Sources */,
+				46A58DCD1A4F2C98001D8B11 /* CardMatchingGame.m in Sources */,
 				460C27801A4D286A00F71590 /* PlayingCardDeck.m in Sources */,
 				464DCB811A4A917B0079F7A9 /* main.m in Sources */,
 				460C27761A4B670700F71590 /* Card.m in Sources */,
