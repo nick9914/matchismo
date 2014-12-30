@@ -20,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *reDeal;
 @property (weak, nonatomic) IBOutlet UISwitch *switch3or2;
 
+
 @end
 
 @implementation ViewController
@@ -61,6 +62,8 @@
         cardButton.enabled = !card.isMatched;
         self.scoreLabel.text = [NSString stringWithFormat:@"Score: %d", self.game.score];
         
+        
+        
     }
 }
 
@@ -87,6 +90,7 @@
 
 - (IBAction)touchReDealButton:(UIButton *)sender {
     [self reDealCards];
+    self.switch3or2.enabled = YES;
     
 }
 - (IBAction)flipSwitch3or2:(UISwitch *)sender {

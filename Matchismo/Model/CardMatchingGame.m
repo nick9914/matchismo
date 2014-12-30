@@ -86,7 +86,7 @@ static const int COST_TO_CHOOSE = 1;
 }
 
 -(void)chooseCardAtIndexVersion3:(NSUInteger)index {
-    self.counter++;
+    self.counter++; //counter to make sure all three cards chosen are in array before calling match.
     Card *card = [self cardAtIndex:index];
     card.chosen = YES;
     [self.threeCards addObject:card];

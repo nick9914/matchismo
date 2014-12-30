@@ -164,7 +164,7 @@
                                     <action selector="touchReDealButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="OrC-RG-LXG"/>
                                 </connections>
                             </button>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R43-O2-v5d">
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="R43-O2-v5d">
                                 <rect key="frame" x="16" y="400" width="51" height="31"/>
                                 <connections>
                                     <action selector="flipSwitch3or2:" destination="vXZ-lx-hvc" eventType="valueChanged" id="JiZ-7v-FI1"/>
