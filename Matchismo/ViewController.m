@@ -18,6 +18,8 @@
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 @property (weak, nonatomic) IBOutlet UIButton *reDeal;
+@property (weak, nonatomic) IBOutlet UISwitch *switch3or2;
+
 @end
 
 @implementation ViewController
@@ -38,8 +40,16 @@
 
 - (IBAction)touchCardButton:(UIButton *)sender {
     int chosenButtonIndex = [self.cardButtons indexOfObject:sender];
-    [self.game chooseCardAtIndex:chosenButtonIndex];
-    [self updateUI];
+    if(self.switch3or2.isOn) {
+        // 3 card match mode
+        [self.game chooseCardAtIndexVersion3:chosenButtonIndex];
+        [self updateUI];
+        
+    } else {
+        [self.game chooseCardAtIndex:chosenButtonIndex];
+        [self updateUI];
+    }
+    
     
 }
 -(void)updateUI {
@@ -78,6 +88,10 @@
 - (IBAction)touchReDealButton:(UIButton *)sender {
     [self reDealCards];
     
+}
+- (IBAction)flipSwitch3or2:(UISwitch *)sender {
+    //First re-deal cards
+    [self reDealCards];
 }
 
 

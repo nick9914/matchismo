@@ -164,6 +164,12 @@
                                     <action selector="touchReDealButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="OrC-RG-LXG"/>
                                 </connections>
                             </button>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R43-O2-v5d">
+                                <rect key="frame" x="16" y="400" width="51" height="31"/>
+                                <connections>
+                                    <action selector="flipSwitch3or2:" destination="vXZ-lx-hvc" eventType="valueChanged" id="JiZ-7v-FI1"/>
+                                </connections>
+                            </switch>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.50196081399917603" blue="0.25098040699958801" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -171,6 +177,7 @@
                     <connections>
                         <outlet property="reDeal" destination="y2M-Be-pPJ" id="ZsN-RQ-pum"/>
                         <outlet property="scoreLabel" destination="Ttc-lY-rRO" id="uv0-yi-zmJ"/>
+                        <outlet property="switch3or2" destination="R43-O2-v5d" id="Iux-nt-dJW"/>
                         <outletCollection property="cardButtons" destination="cye-2K-UGE" id="hHW-rc-Uaj"/>
                         <outletCollection property="cardButtons" destination="A9h-bF-3aW" id="2hj-MC-jXS"/>
                         <outletCollection property="cardButtons" destination="zu5-pe-Q8S" id="xVy-Vv-DF9"/>

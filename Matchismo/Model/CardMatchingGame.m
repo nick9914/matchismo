@@ -11,6 +11,8 @@
 @interface CardMatchingGame ()
 @property (nonatomic, readwrite) NSInteger score;
 @property (nonatomic, strong) NSMutableArray *cards; //of card
+@property (nonatomic, readwrite) NSInteger counter;
+@property (nonatomic, strong) NSMutableArray *threeCards; //of card
 
 @end
 
@@ -20,6 +22,11 @@
     if(!_cards) _cards = [[NSMutableArray alloc] init];
     return _cards;
 }
+- (NSMutableArray *)threeCards {
+    if(!_threeCards) _threeCards = [[NSMutableArray alloc] init];
+    return _threeCards;
+}
+
 //Class instantiation
 - (instancetype)initWithCardCount:(NSUInteger)count usingDeck:(Deck *)deck {
     self = [super init]; //super's designmated initializer
@@ -77,6 +84,33 @@ static const int COST_TO_CHOOSE = 1;
         }
     }
 }
+
+-(void)chooseCardAtIndexVersion3:(NSUInteger)index {
+    self.counter++;
+    Card *card = [self cardAtIndex:index];
+    card.chosen = YES;
+    [self.threeCards addObject:card];
+    if(self.counter == 3) {
+        //TODO: FIX array or MATCH method
+        int matchScore = [card match:self.threeCards];
+        if(matchScore) {
+            self.score += matchScore * MATCH_BONUS;
+            for(Card *otherCard in self.threeCards) { //All three cards are taken out, even if only two match.
+                otherCard.matched = YES;
+            }
+        } else {
+            for (Card *otherCard in self.threeCards) { //TODO check if the cards in array point to the same cards
+                self.score -= MISMATCH_PENATLY;
+                otherCard.chosen = NO;
+            }
+        }
+        self.score -= COST_TO_CHOOSE;
+        self.counter = 0;
+        self.threeCards = nil;
+    }
+}
+
+
 
 
 @end

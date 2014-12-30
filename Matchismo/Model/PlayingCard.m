@@ -19,10 +19,20 @@
         } else if ([otherCard.suit isEqualToString:self.suit]) {
             score = 1;
         }
-
         
+    } else if ([otherCards count] == 3) {
+        for(PlayingCard *selectedCard in otherCards) {
+            for(PlayingCard *otherCard in otherCards) {
+                if(selectedCard != otherCard) {
+                    if(otherCard.rank == selectedCard.rank) {
+                        score = 4;
+                    } else if ([otherCard.suit isEqualToString:selectedCard.suit]) {
+                        score = 1;
+                    }
+                }
+            }
+        }
     }
-    
     
     
     return score;
