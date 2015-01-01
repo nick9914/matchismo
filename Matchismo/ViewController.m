@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 @property (weak, nonatomic) IBOutlet UIButton *reDeal;
 @property (weak, nonatomic) IBOutlet UISwitch *switch3or2;
+@property (weak, nonatomic) IBOutlet UILabel *resultLabel;
 
 
 @end
@@ -58,13 +59,13 @@
         int cardButtonIndex = [self.cardButtons indexOfObject:cardButton];
         Card *card = [self.game cardAtIndex:cardButtonIndex];
         [cardButton setTitle: [self titleForCard:card] forState:UIControlStateNormal];
+        //Fix the (...) problem. 
+        cardButton.titleLabel.adjustsFontSizeToFitWidth = YES;
         [cardButton setBackgroundImage: [self backgroundImageForCard:card] forState:UIControlStateNormal];
         cardButton.enabled = !card.isMatched;
-        self.scoreLabel.text = [NSString stringWithFormat:@"Score: %d", self.game.score];
-        
-        
-        
     }
+    self.scoreLabel.text = [NSString stringWithFormat:@"Score: %d", self.game.score];
+    self.resultLabel.text = self.game.processString;
 }
 
 -(NSString *) titleForCard: (Card *)card {
@@ -85,6 +86,7 @@
     }
     //Set the score = 0
     self.scoreLabel.text = [NSString stringWithFormat:@"Score: %d", 0];
+    self.resultLabel.text = @"";
     self.game = nil;
 }
 
